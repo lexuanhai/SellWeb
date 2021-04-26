@@ -1,0 +1,26 @@
+﻿@using WebSell.Areas.Admin.Models
+@model FunctionViewModel
+<div class="silebar-menu">
+    <ul class="">
+        @foreach (var items in Model.Funcions.Where(x => string.IsNullOrEmpty(x.ParentId.ToString())))
+        {
+            <li>
+                <a class="title-name-menu title-partent" href="javascript:void(0)"> <i class="fa fa-download" aria-hidden="true"></i>@items.Name</a>
+                @if (Model.Funcions.Any(x => x.ParentId == items.Id))
+                {
+                    <ul class="child-menu">
+                        @foreach (var item in Model.Funcions.Where(x => x.ParentId == items.Id))
+                        {
+                            <li class="title-sub-menu">
+                                <a href="@item.URL" class="title-name-menu title-child-menu">@item.Name</a>
+                            </li>
+                        }
+
+                    </ul>
+                }
+
+            </li>
+        }
+
+    </ul>
+</div>

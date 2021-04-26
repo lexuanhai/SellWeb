@@ -1,0 +1,103 @@
+﻿*{
+    box-sizing: border-box !important;
+    font-size: 13px;
+}
+.box-right .box-center {
+    background: #F7F7F7;
+    width: 100%;
+    display: inline-block;
+    /*min-height: 802px;*/
+    height:100%;
+    /*padding: 12px;*/
+    padding: 50px 12px 12px 12px;
+    box-sizing: border-box;
+}
+
+    .box-right .box-center .box-top .title {
+        font-size: 20px;
+    }
+
+    .box-right .box-center .box-top .box-top-left {
+        float: left;
+    }
+
+    .box-right .box-center .box-top .box-top-right {
+        float: right;
+    }
+
+    .box-right .box-center .btn-box:not(:last-child) {
+        margin-right: 5px;
+    }
+
+    .box-right .box-center .btn-box {
+        padding: 7px 10px;
+        border-radius: 5px;
+        border: 1px solid #ddd;
+        cursor: pointer;
+        float: left;
+    }
+.table{
+    background:#fff;
+}
+.red {
+    color: #EB5155;
+}
+.btn-delete {
+    color: red;
+}
+/* .box-right .box-center .box-table {
+        width: 100%;
+        display: inline-block;
+    }
+
+        .box-right .box-center .box-table table {
+            margin: 20px 0px 0px 0px;
+            background: #fff;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+td, th {
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.box-right .box-center .box-table table thead tr th:first-child {
+    width: 10px;
+}
+
+.box-right .box-center .box-table table thead tr th:last-child {
+    width: 79px;
+}
+
+.box-right .box-center .box-table table tr:hover {
+    background: #F9FAFB;
+}
+
+.box-right .box-center .box-table .table-content .come-black {
+    display: inline-block;
+    padding: 10px 10px;
+    background: #ddd;
+    text-decoration: none;
+    font-size: 15px;
+    border-radius: 4px;
+}
+
+    .box-right .box-center .box-table .table-content .come-black:before {
+        content: "";
+        display: inline-block;
+        background: url(/image/icon-general/icon-kham-pha-02.svg) no-repeat center;
+        background-size: cover;
+        height: 17px;
+        width: 24px;
+        transform: rotate(180deg);
+        float: left;
+    }*/
+label.error {
+    color: red;
+    font-size: 13px;
+    margin: 6px 0px;
+    display: block;
+}

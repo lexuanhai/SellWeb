@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="WSS.Core.Common">
+      <HintPath>..\WSS.Core.Common\bin\Debug\netcoreapp3.1\WSS.Core.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="WSS.Core.Domain">
+      <HintPath>..\WSS.Core.Domain\bin\Debug\netcoreapp3.1\WSS.Core.Domain.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

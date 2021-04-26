@@ -1,0 +1,9 @@
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Common\bin\Debug\netcoreapp3.1\WSS.Core.Common.deps.json
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Common\bin\Debug\netcoreapp3.1\WSS.Core.Common.dll
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Common\bin\Debug\netcoreapp3.1\WSS.Core.Common.pdb
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Common\obj\Debug\netcoreapp3.1\WSS.Core.Common.AssemblyInfoInputs.cache
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Common\obj\Debug\netcoreapp3.1\WSS.Core.Common.AssemblyInfo.cs
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Common\obj\Debug\netcoreapp3.1\WSS.Core.Common.csproj.CoreCompileInputs.cache
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Common\obj\Debug\netcoreapp3.1\WSS.Core.Common.dll
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Common\obj\Debug\netcoreapp3.1\WSS.Core.Common.pdb
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Common\obj\Debug\netcoreapp3.1\WSS.Core.Common.csprojAssemblyReference.cache

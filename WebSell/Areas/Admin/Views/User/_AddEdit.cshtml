@@ -1,0 +1,121 @@
+﻿
+@{
+    Layout = null;
+}
+<style>
+    .list-roles{
+        margin:0px -10px;
+    }
+    .list-roles .item-checkbox {
+        float: left;
+        padding: 5px 10px;
+    }
+        .list-roles .item-checkbox .name-role{
+            margin-left:5px;
+        }
+</style>
+<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form method="post" action="#" id="form_user">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thêm mới người dùng</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group row">
+                        <label class="sub-title col-sm-3">Tên người dùng<span class="red">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="Nhập tên người dùng" class="form-control" id="fullname" name="fullname" autocomplete="off" />
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <label class="sub-title col-sm-3">Số điện thoại <span class="red">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="Nhập số điện thoại" class="form-control" id="mobile" name="mobile" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sub-title col-sm-3">Ngày sinh<span class="red">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="Ngày sinh" class="form-control" id="birthday" name="birthday" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sub-title col-sm-3">Email</label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="Email" class="form-control" id="email" name="email" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sub-title col-sm-3">Tên đăng nhập <span class="red">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="Tên đăng nhập" class="form-control" id="username" name="username" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sub-title col-sm-3">Mật khẩu<span class="red">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="password" placeholder="Mật khẩu" class="form-control" id="password" name="password" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sub-title col-sm-3">Nhập lại mật khẩu<span class="red">*</span></label>
+                        <div class="col-sm-9">
+                            <input type="password" placeholder="Nhập lại mật khẩu" class="form-control" id="confirm_password" name="confirm" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sub-title col-sm-3">Địa chỉ</label>
+                        <div class="col-sm-9">
+                            <input type="text" placeholder="Địa chỉ" class="form-control" id="address" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sub-title col-sm-3">Roles</label>
+                        <div class="col-sm-9 list-roles">
+                            @*<div class="item-checkbox">
+                                <input type="checkbox" class="checkbox" />
+                                <span class="name-role">Admin</span>
+                            </div>
+                            <div class="item-checkbox">
+                                <input type="checkbox" class="" />
+                                <span class="name-role">Admin</span>
+                            </div>
+                            <div class="item-checkbox">
+                                <input type="checkbox" class="" />
+                                <span class="name-role">Admin</span>
+                            </div>
+                            <div class="item-checkbox">
+                                <input type="checkbox" class="" />
+                                <span class="name-role">Admin</span>
+                            </div>
+                            <div class="item-checkbox">
+                                <input type="checkbox" class="" />
+                                <span class="name-role">Admin</span>
+                            </div>*@
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sub-title col-sm-3">Ảnh đại diện</label>
+                        <div class="box-input box-input-avatar col-sm-9">
+                            <div class="box-avatar">
+                                <img class="avatar_img" />
+                                <span class="close"></span>
+                            </div>
+                            <label class="choose-avatar" for="avatar">Chọn ảnh</label>
+                            <input type="file" class="text-input" name="avatar_user" id="avatar" style="display:none" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary btn-save">Lưu</button>
+                    <button type="button" class="btn btn-secondary btn-cancel" data-dismiss="modal">Hủy</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

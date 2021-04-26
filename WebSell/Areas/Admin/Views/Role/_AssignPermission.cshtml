@@ -1,0 +1,82 @@
+﻿<style>
+    #tblFunction tr td, #tblFunction tr th {
+        width: 22%;
+    }
+    #tblFunction thead th{
+        padding: 0.75em;
+    }
+    #tblFunction input {
+        float: left;
+        margin-top: 2px;
+        margin-right: 5px;
+    }
+    #tblFunction .title{
+        font-size: 17px;
+    }
+    #modal-grantpermission .modal-header {
+        border-bottom: unset;
+    }
+    .btn-perssion {
+        padding: 7px 30px;
+    }
+    .treegrid-expander{
+        float:left;
+        margin-top:2px;
+    }
+</style>
+<div id="modal-grantpermission" class="bootbox modal fade modal-darkorange in" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Chức năng của quyền</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12">
+                        <input type="hidden" id="hidRoleId" />
+                        <table class="table table-hover tree" id="tblFunction">
+                            <thead class="bordered-darkorange">
+                                <tr>
+                                    <th class="title">Danh mục</th>
+                                    <th>
+                                        <label>
+                                            <input type="checkbox" id="ckCheckAllView">
+                                            <span class="text">View</span>
+                                        </label>
+                                    </th>
+                                    <th>
+                                        <label>
+                                            <input type="checkbox" id="ckCheckAllCreate">
+                                            <span class="text">Create</span>
+                                        </label>
+                                    </th>
+                                    <th>
+                                        <label>
+                                            <input type="checkbox" id="ckCheckAllEdit">
+                                            <span class="text">Update</span>
+                                        </label>
+                                    </th>
+                                    <th>
+                                        <label>
+                                            <input type="checkbox" id="ckCheckAllDelete">
+                                            <span class="text">Delete</span>
+                                        </label>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="lst-data-function">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary btn-save-perssion btn-perssion" id="btnSavePermission">Lưu</button>
+                <button type="button" class="btn btn-secondary btn-danger btn-perssion" data-dismiss="modal">Hủy</button>
+            </div>
+        </div>
+    </div>
+</div>

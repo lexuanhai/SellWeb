@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - WAdmin</title>   
+    <link href="~/admin/css/style.css?v=@DateTime.Now.Ticks" rel="stylesheet" />
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="~/lib/datetimepicker-jquery-plugin/css/jquery.datetimepicker.min.css" rel="stylesheet" />
+    <link href="~/lib/notifyjs-master/dist/styles/metro/notify-metro.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
+</head>
+<body>
+
+    <div class="box-center">
+        @RenderBody()
+    </div>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/admin/js/shared/shared.js?v=@DateTime.Now.Ticks"></script>
+    <script src="~/lib/datetimepicker-jquery-plugin/js/jquery.datetimepicker.js"></script>
+    <script src="~/lib/bootbox/bootbox.all.min.js"></script>
+    <script src="~/lib/notifyjs-master/dist/notify.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            FormatDatetimepicker();
+        })
+
+    </script>
+    @RenderSection("Scripts", required: false)
+
+
+</body>
+</html>

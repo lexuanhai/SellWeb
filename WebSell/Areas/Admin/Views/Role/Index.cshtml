@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .modal-footer {
+        justify-content: center;
+    }
+
+    .btn-grant {
+        margin-right: 5px;
+    }
+   
+</style>
+@section Styles{
+    <link href="~/lib/jquery-treegrid/css/jquery.treegrid.css" rel="stylesheet" />
+    <link href="~/admin/css/role.css" rel="stylesheet" />
+
+}
+<div class="user">
+    <div class="box-top">
+        <div class="box-top-left">
+            <h3 class="title">Danh sách người dùng</h3>
+        </div>
+        <div class="box-top-right">
+            <button class="btn-button btn-search btn btn-info btn-sm" id="btn_search" type="button" data-toggle="collapse" data-target="#collapseExample" href="#collapseExample">Tìm kiếm</button>
+
+        </div>
+        <style>
+            .box-search {
+                border: 1px solid #ced4da;
+                border-radius: 4px;
+                padding: 10px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+
+                .box-search .item-group {
+                    width: 20%;
+                    float: left;
+                    margin-right: 10px;
+                }
+
+                .box-search .submit-search {
+                    display: inline-block;
+                    width: 100%;
+                    text-align: center;
+                }
+
+                    .box-search .submit-search .btn-submit-search,
+                    .box-search .submit-search .btn-cancel-search {
+                        width: 90px;
+                    }
+        </style>
+        <div class="box-search collapse" id="collapseExample">
+            <div class="item-group form-group">
+                <label class="title-search">Mã người dùng</label>
+                <input type="text" class="text-search form-control" id="code_user_search" />
+            </div>
+            <div class="item-group form-group ">
+                <label class="title-search">Tên người dùng</label>
+                <input type="text" class="text-search form-control" id="fullname_user_search" />
+            </div>
+            <div class="item-group form-group ">
+                <label class="title-search">Tên đăng nhập</label>
+                <input type="text" class="text-search form-control" id="name_user_search" />
+            </div>
+
+            <div class="item-group form-group">
+                <label class="title-search">Số điện thoại</label>
+                <input type="text" class="text-search form-control" id="phone_user_search" />
+            </div>
+            <div class="item-group form-group">
+                <label class="title-search">Email</label>
+                <input type="text" class="text-search form-control" id="email_user_search" />
+            </div>
+            <div class="item-group form-group">
+                <label class="title-search">Ngày sinh</label>
+                <input type="text" class="text-search form-control" id="birthday_user_search" />
+            </div>
+            <div class="item-group form-group">
+                <label class="title-search">Địa chỉ</label>
+                <input type="text" class="text-search form-control" id="address_user_search" />
+            </div>
+            <div class="submit-search">
+                <div class="box-submit-search">
+                    <button class=" btn btn-button btn-submit-search btn-success" type="button">Tìm kiếm</button>
+                    <button class=" btn btn-button btn-cancel-search btn-danger" type="button" data-target="#collapseExample" data-toggle="collapse">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="box-table">
+        <div class="box-content-table">
+            <table class="table table-hover text-center table-striped">
+                <thead class="thead-light">
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên Quyền</th>
+                        <th>Mô tả</th>
+                        <th>Ngày tạo</th>
+                        <th>Ngày sửa</th>
+                        <th><a class="btn-add btn btn-success fa fa-plus" data-toggle="modal" data-target="#create" title="thêm mới" href="javascript:void(0)"></a></th>
+                    </tr>
+                </thead>
+                <tbody class="table-content ">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <partial name="/Areas/Admin/Views/Role/_AddEdit.cshtml" />
+    <partial name="/Areas/Admin/Views/Role/_AssignPermission.cshtml" />
+</div>
+
+@section Scripts{
+    <script src="~/lib/jquery-treegrid/js/jquery.treegrid.js"></script>
+    <script src="~/admin/js/role.js?v=@DateTime.Now.Ticks"></script>
+
+}

@@ -1,0 +1,124 @@
+﻿*{
+    margin:0;
+    padding:0;
+}
+h3.title {
+    display: block;
+    font-size: 20px;
+    color: #2aa9e1;
+    font-weight: 500;
+}
+
+.box-top {
+    padding: 10px 0px;
+    margin-bottom: -6px;
+    display: inline-block;
+    width: 100%;
+}
+
+.box-search {
+    display: inline-block;
+    width: 100%;
+}
+
+.box-top {
+    padding: 10px 0px;
+    display: inline-block;
+    width: 100%;
+}
+.img-avatar {
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+.img-avatar img{
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+.table thead th {
+    color: #30456e !important;
+    padding: .75em 5px;
+}
+/*.box-table table{
+        background:#fff;
+    }*/
+.btn-edit, .btn-delete {
+    display: inline-block;
+}
+
+.btn-edit {
+    margin-right: 5px;
+}
+
+.box-table {
+    margin-top: unset;
+    padding-top: unset;
+    display: inline-block;
+    width: 100%;
+}
+
+.box-right .box-center .box-top .title {
+    margin-bottom: unset;
+}
+
+/*.user #create .modal-dialog {
+    width: 450px;
+}*/
+
+.user .modal-title {
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    width: 100%;
+    color: #0298da;
+    font-weight: bold;
+}
+
+.user .sub-title {
+    color: #30456e;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.user .modal-footer {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+    .user .modal-footer .btn-save,
+    .user .modal-footer .btn-cancel {
+        width: 20%;
+    }
+
+.user label {
+    padding-right: unset;
+}
+.user .choose-avatar {
+    background: #FF6600;
+    color: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    cursor:pointer;
+}
+.user .box-avatar {
+    display:none;
+    width: 150px;
+    height: 150px;
+    background-size: cover !important;
+    background-position: center !important;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+.title-delete {
+    text-align: center;        
+}
+
+    .title-delete p {
+        font-size: 17px;
+        font-weight:bold;
+        margin-bottom: 0;
+        color: #30456e;
+    }

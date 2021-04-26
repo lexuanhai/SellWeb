@@ -1,0 +1,12 @@
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\bin\Debug\netcoreapp3.1\WSS.Core.Domain.deps.json
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\bin\Debug\netcoreapp3.1\WSS.Core.Domain.dll
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\bin\Debug\netcoreapp3.1\WSS.Core.Domain.pdb
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\obj\Debug\netcoreapp3.1\WSS.Core.Domain.AssemblyInfoInputs.cache
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\obj\Debug\netcoreapp3.1\WSS.Core.Domain.AssemblyInfo.cs
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\obj\Debug\netcoreapp3.1\WSS.Core.Domain.csproj.CoreCompileInputs.cache
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\obj\Debug\netcoreapp3.1\WSS.Core.Domain.dll
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\obj\Debug\netcoreapp3.1\WSS.Core.Domain.pdb
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\obj\Debug\netcoreapp3.1\WSS.Core.Domain.csprojAssemblyReference.cache
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\bin\Debug\netcoreapp3.1\WSS.Core.Common.dll
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\bin\Debug\netcoreapp3.1\WSS.Core.Common.pdb
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\obj\Debug\netcoreapp3.1\WSS.Core.Domain.csproj.CopyComplete

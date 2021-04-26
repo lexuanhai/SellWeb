@@ -1,0 +1,201 @@
+﻿<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+@{
+    ViewData["Title"] = "Đăng nhập";
+    Layout = null;
+}
+<style>
+    .box-login {
+        background: #f1f1f1;
+        height: 100%;
+        width: 100%;
+        padding-top: 50px;
+    }
+
+        .box-login .box-content {
+            padding: 2em 3.5em;
+            max-width: 500px;
+            margin: 0px auto;
+            background: #fff;
+            box-shadow: 2px 9px 49px -17px rgb(0 0 0 / 10%);
+        }
+
+        .box-login .login h1 {
+            text-align: center;
+            font-size: 25px;
+            line-height: 35px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #3b3663;
+        }
+
+    .input-group {
+        margin-bottom: 25px;
+        padding: 0px 0px;
+        border-bottom: 1px solid #e5e5e5;
+        position: relative;
+    }
+
+    .input-custom {
+        font-size: 17px;
+        font-weight: 500;
+        color: #999;
+        text-align: left;
+        padding: 14px 15px 12px 35px;
+        width: 100%;
+        display: inline-block;
+        box-sizing: border-box;
+        border: none;
+        outline: none;
+        background: transparent;
+        letter-spacing: .5px;
+    }
+
+    .form-row-bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .display-none {
+        display: none;
+    }
+
+    .form-checkbox .label-remenber {
+        cursor: pointer;
+        color: #888;
+    }
+
+        .form-checkbox .label-remenber:before {
+            border-radius: 3px;
+            border: 1px solid #e2e2e2;
+            color: transparent;
+            content: "\2714";
+            display: inline-block;
+            height: 20px;
+            margin-right: 5px;
+            transition: 0.2s;
+            vertical-align: inherit;
+            width: 20px;
+            text-align: center;
+            line-height: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+        }
+
+    .form-row-bottom .form-checkbox .input-remember:checked + label:before {
+        background-color: #9146ff;
+        border-color: #9146ff;
+        color: #fff;
+    }
+
+    a.forgot:hover {
+        text-decoration: underline;
+    }
+
+    a.forgot {
+        color: #3b3663;
+        margin-top: 2px;
+    }
+
+    .btn-block {
+        margin-top: 30px;
+        padding: 15px 15px;
+        font-size: 18px;
+        background-color: #9146ff;
+        border: none;
+    }
+
+        .btn-block:hover {
+            background-color: #7d32eb;
+            color: #fff;
+        }
+
+    p.continue {
+        margin-top: 25px;
+        padding: 0;
+        margin-bottom: 20px;
+        color: #999;
+        opacity: .8;
+        text-align: center;
+    }
+
+        p.continue span {
+            position: relative;
+        }
+
+            p.continue span:before {
+                position: absolute;
+                content: '';
+                height: 1px;
+                background: #999;
+                width: 89%;
+                left: -100%;
+                top: 10px;
+                opacity: .5;
+            }
+
+            p.continue span:after {
+                position: absolute;
+                content: '';
+                height: 1px;
+                background: #999;
+                width: 89%;
+                right: -100%;
+                top: 10px;
+                opacity: .5;
+            }
+
+    .social-login {
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 15px;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+
+    .facebook {
+        width: 46px;
+        height: 46px;
+        line-height: 46px;
+        border-radius: 50%;
+        text-align: center;
+        font-size: 15px;
+        color: #fff;
+        background: #3b5998;
+    }
+</style>
+@*<link href="~/css/login.css" rel="stylesheet" />*@
+<div class="box-login">
+    <div class="container">
+        <div class="box-content">
+            <form id="form_login" method="post" action="#">
+                @Html.AntiForgeryToken()
+                <div class="login">
+                    <h1>ĐĂNG NHẬP</h1>
+                    <div class="input-group">
+                        <span><i class="fas fa-user" aria-hidden="true"></i></span>
+                        <input type="text" placeholder="Username or Email" class="input-custom username">
+                    </div>
+                    <div class="input-group">
+                        <span><i class="fas fa-user" aria-hidden="true"></i></span>
+                        <input type="Password" placeholder="Password" class="input-custom password">
+                    </div>
+                    <div class="form-row-bottom">
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="remenber" name="remenber" value="remenber" class="input-remember display-none">
+                            <label for="remenber" class="label-remenber"> Remember me?</label>
+                        </div>
+                        <a href="#url" class="forgot">Forgot password?</a>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-login" type="button">Login</button>
+                    <p class="continue"><span>or Login with</span></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+@*<script src="~/lib/jquery.validate.min.js"></script>*@
+<script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="~/admin/js/login.js?v=@DateTime.Now.Ticks"></script>
+<script type="text/javascript">
+
+</script>
