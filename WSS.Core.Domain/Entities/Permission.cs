@@ -8,7 +8,7 @@ namespace WSS.Core.Domain.Entities
 {
     public class Permission:SameEntities
     {
-        public Guid RoleId { get; set; }
+        public Guid? RoleId { get; set; }
         public int? FunctionId { set; get; }
         public bool? CanCreate { get; set; }
         public bool? CanRead { get; set; }

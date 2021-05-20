@@ -1,38 +1,57 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using WebSell.Areas.Admin.Models;
+using WSS.Core.Common.Extensions;
+using WSS.Core.Common.Utilities;
+using WSS.Core.Dto.DataModel;
 using WSS.Service.FunctionService;
+using WSS.Service.RoleService;
 
 namespace WebAdmin.Areas.Admin.Components.SileBar
 {
     public class SileBar: ViewComponent
     {
         private readonly IFunctionService _functionService;
-
-        public SileBar(IFunctionService functionService)
+        private readonly IRoleService _roleService;
+        public SileBar(IFunctionService functionService,
+            IRoleService roleService)
         {
             _functionService = functionService;
+            _roleService = roleService;
         }
         public async Task<IViewComponentResult> InvokeAsync()
-        {
-            var functions = _functionService.GetAll();
-            var model = new FunctionViewModel();
-            if (functions != null && functions.Count > 0)
+        {          
+            var roles = ((ClaimsPrincipal)User).GetSpecificClaim("Roles");
+            var rolesId = new List<string>();            
+            List<FunctionModel> functions;
+            if (roles.Split(";").Contains(CommonConstants.AppRole.AdminRole))
             {
-                model.Funcions = functions;
+                functions =  _functionService.GetAll();
             }
-            //var roles = ((ClaimsPrincipal)User).GetSpecificClaim("Roles");
-            //var functions = new List<FunctionModel>();
-            ////if (roles.Split(";").Contains(CommonConstants.AdminRole))
-            ////{
-            ////    functions = await _functionService.GetAll();
-            ////}
-            ////else
-            ////{
-            ////    functions = new List<FunctionModel>();
-            ////}
-            //functions = await _functionService.GetAll();
-            return View(model);
+            else
+            {
+
+                // functions = _functionService.GetFunctionByRoleId()
+                //if (roles != null && roles.Count() > 0)
+                //{
+                //    var listRoleToModel = new List<RoleModel>();
+                //    foreach (var item in roles)
+                //    {
+                //        var roleEntity = _roleService.GetRoleByName(item.ToString());
+                //        if (roleEntity != null)
+                //        {
+                //            var roleModel = new RoleModel();
+                //            roleModel.Id = roleEnti;
+                //            listRoleToModel.Add(roleModel.T);
+                //        }
+                //    }
+                //}
+                functions = _functionService.GetAll();//("73D8E119-0AAE-4786-F916-08D907B6FBDC");
+            }
+            return View(functions);
         }
     }
 }

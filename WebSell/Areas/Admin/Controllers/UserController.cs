@@ -5,9 +5,11 @@ using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using WebAdmin.Areas.Admin.Models;
+using WebSell.Authorization;
 using WSS.Core.Dto.DataModel;
 using WSS.Core.Dto.SearchModel.UserSearch;
 //using WSS.Service.UserRoleService;
@@ -19,21 +21,26 @@ namespace WebSell.Areas.Admin.Controllers
     public class UserController : Controller
     {
         private readonly IUserService _userService;
+        private readonly IAuthorizationService _authorizationService;
         //private readonly IUserRoleService _userRoleService;
         public UserController(
-            IUserService userService)
+            IUserService userService, IAuthorizationService authorizationService)
            // IUserRoleService userRoleService)
         {
             _userService = userService;
+            _authorizationService = authorizationService;
             //_userRoleService = userRoleService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            //var result = await _authorizationService.AuthorizeAsync(User, "USER", Operations.Read);
+            //if (result.Succeeded == false)
+            //    return new RedirectResult("/Admin/Login/Index");
             return View();
         }        
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAllUser()
         {
             var model = await _userService.GetAllAsync();
             return new OkObjectResult(model);
@@ -42,6 +49,7 @@ namespace WebSell.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> SaveEntity(UserModel userVM)
         {
+            //User.Identity.Name
             var _message = "";
             bool status = false;
             try

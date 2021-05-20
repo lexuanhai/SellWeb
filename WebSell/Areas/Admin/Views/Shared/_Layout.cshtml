@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using WSS.Core.Common.Extensions
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -23,10 +24,10 @@
             </div>
             <div class="info-user">
                 @*<p class="name">@User.GetSpecificClaim("FullName")</p>*@
-                <p class="role">Admin</p>
+                <p class="role">@User.GetSpecificClaim("FullName")</p>
             </div>
         </div>
-        @*@await Component.InvokeAsync("SileBar")*@
+        @await Component.InvokeAsync("SileBar")
         @*<div class="silebar-menu">
                 <ul class="">
                     <li>

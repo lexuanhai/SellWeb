@@ -13,6 +13,7 @@ using WSS.Core.Dto.SearchModel.RoleSearch;
 using WSS.Core.Dto.SearchModel.UserSearch;
 using WSS.Core.Repository;
 using WSS.Core.Repository.Repositories;
+using System.Threading.Tasks;
 
 namespace WSS.Service.FunctionService
 {
@@ -23,21 +24,23 @@ namespace WSS.Service.FunctionService
         PageResult<FunctionModel> GetSearchPaging(FunctionSearch search);
         List<FunctionModel> GetParentFunction();
         List<FunctionModel> GetAllByParentId(int id);
-
+        List<FunctionModel> GetFunctionByRoleId(Guid? roleId);
         List<FunctionModel> GetAll();
-        //List<FunctionModel> GetAll();
         void Save();
         bool Delete(int id);
     }
     public class FunctionService : IFunctionService
     {
         IFunctionRepository _functionRepository;
+        IPermissionRepository _permissionRepository;
         IUnitOfWork _unitOfWork;
         public FunctionService(
             IFunctionRepository functionRepository,
+            IPermissionRepository permissionRepository,
             IUnitOfWork unitOfWork)
         {
             _functionRepository = functionRepository;
+            _permissionRepository = permissionRepository;
             _unitOfWork = unitOfWork;
         }
         public FunctionModel GetFunctioneById(int id)
@@ -65,7 +68,7 @@ namespace WSS.Service.FunctionService
                     function.Name = functionModel.Name;
                     function.URL = functionModel.URL;
                     function.UpdatedDate = DateTime.Now;
-                    function.ParentId = functionModel.ParentId;
+                    function.ParentId = functionModel.ParentId != null && functionModel.ParentId > 0 ? functionModel.ParentId : null;
                     function.SortOrder = functionModel.SortOrder;
                     function.IconCss = functionModel.IconCss;
                     function.Status = functionModel.Status;
@@ -79,7 +82,7 @@ namespace WSS.Service.FunctionService
                     function.Id = functionModel.Id;
                     function.Name = functionModel.Name;
                     function.URL = functionModel.URL;
-                    function.ParentId = functionModel.ParentId;
+                    function.ParentId = functionModel.ParentId != null && functionModel.ParentId > 0 ? functionModel.ParentId : null;
                     function.SortOrder = functionModel.SortOrder;
                     function.IconCss = functionModel.IconCss;
                     function.Status = functionModel.Status;
@@ -113,17 +116,17 @@ namespace WSS.Service.FunctionService
             //{
             //    query = query.Where(r => r.Description.Contains(search.Description));
             //}
-            
+
             var Total = query.Count();
 
-            var data = query               
+            var data = query
                 .OrderByDescending(f => f.CreatedDate)
                 .Skip((search.PageIndex - 1) * search.PageSize)
                 .Take(search.PageSize)
                 .Select(f => f.ToModel())
                 .ToList();
 
-            foreach(var item in data)
+            foreach (var item in data)
             {
                 if (item.ParentId != null && item.ParentId > 0)
                 {
@@ -154,7 +157,7 @@ namespace WSS.Service.FunctionService
         }
         public List<FunctionModel> GetParentFunction()
         {
-            var lstParentFunction = _functionRepository.FindAll().Where(f => f.ParentId == null || f.ParentId == 0).Select(f=>f.ToModel()).ToList();
+            var lstParentFunction = _functionRepository.FindAll().Where(f => f.ParentId == null || f.ParentId == 0).Select(f => f.ToModel()).ToList();
             return lstParentFunction;
         }
         // Get Function theo parentId
@@ -181,8 +184,19 @@ namespace WSS.Service.FunctionService
                 }
             }
             return lstFunctionSort;
-        }       
+        }
+        public List<FunctionModel> GetFunctionByRoleId(Guid? roleId)
+        {        
+            var functions = from tbl_Fuction in _functionRepository.FindAll()
+                            join tbl_Permission in _permissionRepository.FindAll() on tbl_Fuction.Id equals tbl_Permission.FunctionId into dr_fp
+                            from fp in dr_fp.DefaultIfEmpty()
+                            where fp.RoleId == roleId && tbl_Fuction.Status == Status.Active
+                            select tbl_Fuction.ToModel();
 
+            if (functions != null)
+                return functions.ToList();
+            return null;
+        }     
         public void Save()
         {
             _unitOfWork.Commit();

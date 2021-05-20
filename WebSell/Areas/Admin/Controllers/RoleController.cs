@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using WebAdmin.Areas.Admin.Models;
+using WSS.Core.Common.Extensions;
 using WSS.Core.Dto.DataModel;
 using WSS.Core.Dto.SearchModel.RoleSearch;
 using WSS.Core.Dto.SearchModel.UserSearch;
@@ -16,9 +17,8 @@ using WSS.Service.RoleService;
 using WSS.Service.UserService;
 
 namespace WebSell.Areas.Admin.Controllers
-{
-    [Area("Admin")]
-    public class RoleController : Controller
+{    
+    public class RoleController : BaseController
     {
         private readonly IRoleService _roleService;
         private readonly IFunctionService _functionService;
@@ -30,7 +30,7 @@ namespace WebSell.Areas.Admin.Controllers
             _functionService = functionService;
         }
         public IActionResult Index()
-        {
+        {            
             return View();
         }
 
@@ -120,12 +120,12 @@ namespace WebSell.Areas.Admin.Controllers
         //    return new OkObjectResult(new { Status = false, Message = "Quyền không tồn tại" });
         //}
 
-        //[HttpGet]
-        //public IActionResult ListFunctionByRole(int roleId)
-        //{
-        //    var functions = _roleService.GetListFunctionWithRole(roleId);
-        //    return new OkObjectResult(functions);
-        //}
+        [HttpGet]
+        public IActionResult ListFunctionByRole(Guid roleId)
+        {
+            var functions = _roleService.GetListFunctionWithRole(roleId);
+            return new OkObjectResult(functions);
+        }
         //[HttpGet]
         //public IActionResult GetAllRole()
         //{
@@ -137,19 +137,19 @@ namespace WebSell.Areas.Admin.Controllers
         //    return new OkObjectResult(new { Status = false });
         //}
 
-        //[HttpGet]
-        //public IActionResult ListAllFunction()
-        //{
-        //    var functions = _functionService.GetAll();
-        //    return new OkObjectResult(new { Data = functions });
-        //}
+        [HttpGet]
+        public IActionResult ListAllFunction()
+        {
+            var functions = _functionService.GetAll();
+            return new OkObjectResult(new { Data = functions });
+        }
 
-        //[HttpPost]
-        //public IActionResult SavePermission(List<PermissionModel> listPermmission, int roleId)
-        //{
-        //    _roleService.SavePermission(listPermmission, roleId);
-        //    return new OkResult();
-        //}
+        [HttpPost]
+        public IActionResult SavePermission(List<PermissionModel> listPermmission, Guid roleId)
+        {
+           var status = _roleService.SavePermission(listPermmission, roleId);
+            return new OkObjectResult(new { Status = status});
+        }
 
     }
 }

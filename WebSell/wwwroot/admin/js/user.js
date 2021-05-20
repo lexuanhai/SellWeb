@@ -337,20 +337,20 @@
         $(".box-avatar").css("display", "none");
     }
     // Get User
-    self.GetUser = function (userSearch) {
+    self.GetUser = function () {
         $.ajax({
             type: "GET",
-            url: "/Admin/User/GetPaging",
+            url: "/Admin/User/GetAllUser",
             dataType: "json",
-            data: userSearch,
             beforeSend: function () {
             },
             complete: function () {
             },
             success: function (response) {
-                if (response.Results != null && response.Results.length > 0) {
+                var data = response
+                if (data != null && data.length > 0) {
                     var html = "";
-                    $.each(response.Results, function (key, item) {
+                    $.each(data, function (key, item) {
 
                         html += "<tr>" +
                             "<td></td>" +
@@ -361,8 +361,8 @@
                             "<td>" + (item.Email !== null && item.Email !== "" ? item.Email : "") + "</td>" +
                             "<td>" + (item.BirthDay !== null ? dateFormatJson(item.BirthDay) : "") + "</td>" +
                             "<td>" + (item.Address !== null && item.Address !== "" ? item.Address : "") + "</td>" +
-                            "<td>" + (item.CreatedDate !== null ? dateFormatJson(item.CreatedDate) : "") + "</td>" +
-                            "<td>" + (item.UpdatedDate !== null ? dateFormatJson(item.UpdatedDate) : "") + "</td>" +
+                            //"<td>" + (item.CreatedDate !== null ? dateFormatJson(item.CreatedDate) : "") + "</td>" +
+                            //"<td>" + (item.UpdatedDate !== null ? dateFormatJson(item.UpdatedDate) : "") + "</td>" +
                             '<td>' +
                             '<a class="btn-role-user fa fa-user-secret fa-lg" title = "gán role" data-id=' + item.Id + ' data-id=' + item.Id + '  href="javascript:void(0)" ></a >' +
                             '<a class="btn-edit fa fa-pencil-square fa-lg" title = "Sửa" data-id=' + item.Id + ' data-id=' + item.Id + '  href="javascript:void(0)" ></a >' +
@@ -506,7 +506,12 @@
             if ($(item).prop('checked') === true)
                 roles.push($(item).prop('value'));
         });
-        form_data.append("Roles", roles);
+        if (roles.length > 0) {
+            $.each(roles, function (key, item) {
+                form_data.append("Roles", item);
+            })
+        }
+       
         //form_data.append("BirthDayTest", self.User.BirthDay);
         //form_data.append("BirthDay", new Date(date).toUTCString());
         //form_data.append("Files", self.Files);

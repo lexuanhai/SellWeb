@@ -30,7 +30,6 @@
     self.Files = {};
     self.Init = function () {
         $(".btn-login").click(function () {
-            debugger;
             var userName = $(".username").val();
             var password = $(".password").val();
             $.ajax({
@@ -41,22 +40,17 @@
                     password: password
                 },
                 dateType: 'json',
-                //contentType: false,
-                //processData: false,
                 beforeSend: function () {
                 },
                 complete: function () {
-                    /*$(".add-edit-user").css("display", "inline-block");*/
                 },
                 success: function (response) {
-                    //if (response.status == true) {
-                    //    self.GetUser();
-                    //    $('#create').modal('hide');
-                    //    $.notify(response.message, 'success');
-                    //}
-                    //else {
-                    //    $.notify(response.message, 'error');
-                    //}
+                    if (response.Status == 1) {
+                        $.notify(response.Message, 'success');
+                        window.location.href = "/Admin/Home";
+                    } else {
+                        $.notify(response.Message, 'error');
+                    }                 
                 },
                 error: function (eror) {
                     console.log(eror);
