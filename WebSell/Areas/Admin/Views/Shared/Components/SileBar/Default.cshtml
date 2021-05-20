@@ -1,15 +1,15 @@
-﻿@using WebSell.Areas.Admin.Models
-@model FunctionViewModel
+﻿@using WSS.Core.Dto.DataModel
+@model List<FunctionModel>
 <div class="silebar-menu">
     <ul class="">
-        @foreach (var items in Model.Funcions.Where(x => string.IsNullOrEmpty(x.ParentId.ToString())))
+        @foreach (var items in Model.Where(x => string.IsNullOrEmpty(x.ParentId.ToString())))
         {
             <li>
-                <a class="title-name-menu title-partent" href="javascript:void(0)"> <i class="fa fa-download" aria-hidden="true"></i>@items.Name</a>
-                @if (Model.Funcions.Any(x => x.ParentId == items.Id))
+                <a class="title-name-menu title-partent" href="javascript:void(0)"> @*<i class="fa fa-download" aria-hidden="true"></i>*@ @items.Name</a>
+                @if (Model.Any(x => x.ParentId == items.Id))
                 {
                     <ul class="child-menu">
-                        @foreach (var item in Model.Funcions.Where(x => x.ParentId == items.Id))
+                        @foreach (var item in Model.Where(x => x.ParentId == items.Id))
                         {
                             <li class="title-sub-menu">
                                 <a href="@item.URL" class="title-name-menu title-child-menu">@item.Name</a>
@@ -17,10 +17,8 @@
                         }
 
                     </ul>
-                }
-
+                 }
             </li>
-        }
-
+         }
     </ul>
 </div>

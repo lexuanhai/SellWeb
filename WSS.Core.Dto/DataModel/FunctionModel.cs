@@ -19,6 +19,5 @@ namespace WSS.Core.Dto.DataModel
         public string CreatedBy { get; set; }
         public DateTime? UpdatedDate { get; set; }
         public string UpdatedBy { get; set; }
-
     }
 }

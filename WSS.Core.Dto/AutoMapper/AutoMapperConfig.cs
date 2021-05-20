@@ -32,8 +32,8 @@ namespace WSS.Core.Dto.AutoMapper
         {
             _mapperConfiguration = new MapperConfiguration(cfg =>
             {
-                //cfg.CreateMap<User, UserModel>();
-                cfg.CreateMap<UserModel, User>();
+                cfg.CreateMap<AppUser, UserModel>();
+                cfg.CreateMap<UserModel, AppUser>();
                 cfg.CreateMap<AppRole, RoleModel>();
                 cfg.CreateMap<RoleModel, AppRole>();
                 cfg.CreateMap<Function, FunctionModel>();

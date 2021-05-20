@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using WSS.Core.Common.Extensions;
 using WSS.Core.Domain.Entities;
 using WSS.Core.Dto.DataModel;
 
@@ -24,6 +25,7 @@ namespace WebSell.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
+            User.GetSpecificClaim("Email");
             return View();
         }
 
@@ -37,6 +39,7 @@ namespace WebSell.Areas.Admin.Controllers
                 var result = await _signInManager.PasswordSignInAsync(userName, password, false, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+                   
                     return new OkObjectResult(new { Status = 1, Message = "Đăng nhập thành công" });
                 }
                 if (result.IsLockedOut)

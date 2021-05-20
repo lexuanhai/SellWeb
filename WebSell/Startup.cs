@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +11,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using WebSell.Authorization;
+using WebSell.Helpers;
 using WSS.Core.Domain.Entities;
 using WSS.Core.Dto.AutoMapper;
 using WSS.Core.Repository;
@@ -47,11 +50,12 @@ namespace WebSell
             services.AddTransient(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddScoped<RoleManager<AppRole>, RoleManager<AppRole>>();
+            services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipalFactory>();
             // // Services
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<IFunctionService, FunctionService>();
-            // services.AddTransient<IPermissionService, PermissionService>();
+            services.AddTransient<IPermissionService, PermissionService>();
             //services.AddTransient<IUserRoleService, UserRoleService>();
             // services.AddTransient<IProductCategoryService, ProductCategoryService>();
             // services.AddTransient<IColorService, ColorService>();
@@ -62,9 +66,9 @@ namespace WebSell
             // services.AddTransient<IBillService, BillService>();
             // //Repository
             services.AddTransient<IUserRepository, UserRepository>();
-            // services.AddTransient<IRoleRepository, RoleRepository>();
+            services.AddTransient<IRoleRepository, RoleRepository>();
             services.AddTransient<IFunctionRepository, FunctionRepository>();
-            // services.AddTransient<IPermissionRepository, PermissionRepository>();
+            services.AddTransient<IPermissionRepository, PermissionRepository>();
             // services.AddTransient<IUserRoleRepository, UserRoleRepository>();
             // services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
             // services.AddTransient<IColorRepository, ColorRepository>();
@@ -74,6 +78,7 @@ namespace WebSell
             // services.AddTransient<IProductQuantityRepository, ProductQuantityRepository>();
             // services.AddTransient<IBillRepository, BillRepository>();
             // services.AddMvc().AddControllersAsServices();
+            services.AddTransient<IAuthorizationHandler, BaseResourceAuthorizationHandler>();
             // trả về mặc định json
             services.AddMvc().AddJsonOptions(o =>
             {
@@ -119,10 +124,9 @@ namespace WebSell
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
             app.UseAuthentication();
-            //app.UseAuthorization();
+            app.UseAuthorization();
             app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
             {

@@ -9,6 +9,6 @@ D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Dto\bin\Debug\netcoreapp3.1\WSS.Core.Do
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Dto\obj\Debug\netcoreapp3.1\WSS.Core.Dto.csproj.CopyComplete
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Dto\obj\Debug\netcoreapp3.1\WSS.Core.Dto.dll
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Dto\obj\Debug\netcoreapp3.1\WSS.Core.Dto.pdb
-D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Dto\obj\Debug\netcoreapp3.1\WSS.Core.Dto.csprojAssemblyReference.cache
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Dto\bin\Debug\netcoreapp3.1\WSS.Core.Common.dll
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Dto\bin\Debug\netcoreapp3.1\WSS.Core.Common.pdb
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Dto\obj\Debug\netcoreapp3.1\WSS.Core.Dto.csprojAssemblyReference.cache
