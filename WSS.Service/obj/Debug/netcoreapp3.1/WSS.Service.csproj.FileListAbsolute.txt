@@ -1,4 +1,3 @@
-D:\Hoc Tap\project\ShopSell\WSS\WSS.Service\obj\Debug\netcoreapp3.1\WSS.Service.csprojAssemblyReference.cache
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Service\obj\Debug\netcoreapp3.1\WSS.Service.AssemblyInfoInputs.cache
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Service\obj\Debug\netcoreapp3.1\WSS.Service.AssemblyInfo.cs
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Service\bin\Debug\netcoreapp3.1\WSS.Service.deps.json

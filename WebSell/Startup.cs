@@ -24,7 +24,7 @@ using WSS.Service.PermissionService;
 using WSS.Service.ProductCategoryService;
 using WSS.Service.ProductQuantityService;
 using WSS.Service.ProductService;
-using WSS.Service.RoleService;
+//using WSS.Service.RoleService;
 //using WSS.Service.RoleService;
 using WSS.Service.SizeService;
 //using WSS.Service.UserRoleService;
@@ -53,32 +53,32 @@ namespace WebSell
             services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, CustomClaimsPrincipalFactory>();
             // // Services
             services.AddTransient<IUserService, UserService>();
-            services.AddTransient<IRoleService, RoleService>();
+            //services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<IFunctionService, FunctionService>();
             services.AddTransient<IPermissionService, PermissionService>();
             //services.AddTransient<IUserRoleService, UserRoleService>();
-            // services.AddTransient<IProductCategoryService, ProductCategoryService>();
-            // services.AddTransient<IColorService, ColorService>();
-            // services.AddTransient<ISizeService, SizeService>();
-            // services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<IProductCategoryService, ProductCategoryService>();
+            services.AddTransient<IColorService, ColorService>();
+            services.AddTransient<ISizeService, SizeService>();
+            services.AddTransient<IProductService, ProductService>();
             // services.AddTransient<IProductQuantityService, ProductQuantityService>();
             // services.AddTransient<IProductImagesService, ProductImagesService>();
             // services.AddTransient<IBillService, BillService>();
             // //Repository
             services.AddTransient<IUserRepository, UserRepository>();
-            services.AddTransient<IRoleRepository, RoleRepository>();
+            //services.AddTransient<IRoleRepository, RoleRepository>();
             services.AddTransient<IFunctionRepository, FunctionRepository>();
             services.AddTransient<IPermissionRepository, PermissionRepository>();
-            // services.AddTransient<IUserRoleRepository, UserRoleRepository>();
-            // services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
-            // services.AddTransient<IColorRepository, ColorRepository>();
-            // services.AddTransient<ISizeRepository, SizeRepository>();
-            // services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IUserRoleRepository, UserRoleRepository>();
+            services.AddTransient<IProductCategoryRepository, ProductCategoryRepository>();
+            services.AddTransient<IColorRepository, ColorRepository>();
+            services.AddTransient<ISizeRepository, SizeRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
             // services.AddTransient<IProductImagesRepository, ProductImagesRepository>();
             // services.AddTransient<IProductQuantityRepository, ProductQuantityRepository>();
             // services.AddTransient<IBillRepository, BillRepository>();
             // services.AddMvc().AddControllersAsServices();
-            services.AddTransient<IAuthorizationHandler, BaseResourceAuthorizationHandler>();
+            //services.AddTransient<IAuthorizationHandler, BaseResourceAuthorizationHandler>();
             // trả về mặc định json
             services.AddMvc().AddJsonOptions(o =>
             {
@@ -126,7 +126,7 @@ namespace WebSell
             app.UseStaticFiles();
             app.UseRouting();
             app.UseAuthentication();
-            app.UseAuthorization();
+            //app.UseAuthorization();
             app.UseStaticFiles();
             app.UseEndpoints(endpoints =>
             {

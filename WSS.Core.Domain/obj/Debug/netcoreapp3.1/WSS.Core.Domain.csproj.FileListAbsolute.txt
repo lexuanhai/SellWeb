@@ -10,3 +10,6 @@ D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\bin\Debug\netcoreapp3.1\WSS.Core
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\bin\Debug\netcoreapp3.1\WSS.Core.Common.pdb
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\obj\Debug\netcoreapp3.1\WSS.Core.Domain.csproj.CopyComplete
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\obj\Debug\netcoreapp3.1\WSS.Core.Domain.csprojAssemblyReference.cache
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\bin\Debug\netcoreapp3.1\WSS.Core.Domain.runtimeconfig.json
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\bin\Debug\netcoreapp3.1\WSS.Core.Domain.runtimeconfig.dev.json
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Domain\obj\Debug\netcoreapp3.1\WSS.Core.Domain.genruntimeconfig.cache

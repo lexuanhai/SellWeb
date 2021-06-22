@@ -8,19 +8,19 @@ using WSS.Core.Common.Extensions;
 using WSS.Core.Common.Utilities;
 using WSS.Core.Dto.DataModel;
 using WSS.Service.FunctionService;
-using WSS.Service.RoleService;
+//using WSS.Service.RoleService;
 
 namespace WebAdmin.Areas.Admin.Components.SileBar
 {
     public class SileBar: ViewComponent
     {
         private readonly IFunctionService _functionService;
-        private readonly IRoleService _roleService;
-        public SileBar(IFunctionService functionService,
-            IRoleService roleService)
+        //private readonly IRoleService _roleService;
+        public SileBar(IFunctionService functionService
+           /* IRoleService roleService*/)
         {
             _functionService = functionService;
-            _roleService = roleService;
+            //_roleService = roleService;
         }
         public async Task<IViewComponentResult> InvokeAsync()
         {          

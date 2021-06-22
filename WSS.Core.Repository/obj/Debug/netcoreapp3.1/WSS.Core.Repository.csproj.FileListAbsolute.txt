@@ -12,3 +12,6 @@ D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Repository\obj\Debug\netcoreapp3.1\WSS.
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Repository\bin\Debug\netcoreapp3.1\WSS.Core.Common.dll
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Repository\bin\Debug\netcoreapp3.1\WSS.Core.Common.pdb
 D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Repository\obj\Debug\netcoreapp3.1\WSS.Core.Repository.csprojAssemblyReference.cache
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Repository\bin\Debug\netcoreapp3.1\WSS.Core.Repository.runtimeconfig.json
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Repository\bin\Debug\netcoreapp3.1\WSS.Core.Repository.runtimeconfig.dev.json
+D:\Hoc Tap\project\ShopSell\WSS\WSS.Core.Repository\obj\Debug\netcoreapp3.1\WSS.Core.Repository.genruntimeconfig.cache
